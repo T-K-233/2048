@@ -1,6 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <title>2048, but for university</title>
+  <meta name="description" content="2048 Game">
+  <meta name="author" content="-T.K.-">
   <style>
   html, body {
   margin: 0;
@@ -754,6 +758,7 @@ hr {
 }
 
   </style>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdn.bootcss.com/hammer.js/2.0.8/hammer.min.js"></script>
 </head>
 <body>
@@ -813,20 +818,6 @@ hr {
   </p>
 </div>
 <script>
-
-
-/*const names = {
-  2: "TK",
-  4: "半托",
-  8: "也鸣",
-  16: "潇潇",
-  32: "鱼昂",
-  64: "YYR",
-  128: "schh",
-  256: "许染",
-  1024: "海哥！",
-  2048: "？",
-  };*/
   
 const names = {
   2: "哈佛",
@@ -1347,7 +1338,8 @@ KeyboardInputManager.prototype.listen = function () {
   });
   
   handler.on("swipe", function (event) {
-    event.gesture.preventDefault();
+  
+    event.preventDefault();
     mapped = gestures.indexOf(event.gesture.direction);
 
     if (mapped !== -1) self.emit("move", mapped);
